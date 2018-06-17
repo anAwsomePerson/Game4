@@ -11,6 +11,8 @@ public class Spawner : MonoBehaviour {
     float spawnCDRemaining;
     int currentWave;
     int difficultyPoints;
+    public GameObject player;
+    public GameObject goal;
     public GameObject[] paperworkTypes = new GameObject[1];
 
 	// Use this for initialization
@@ -25,21 +27,22 @@ public class Spawner : MonoBehaviour {
         {
             spawnCDRemaining -= Time.deltaTime;
 
-            if (GameObject.FindObjectsOfType<Paperwork>().Length + difficultyPoints <= 0)
+            if ((GameObject.FindObjectsOfType<Paperwork>().Length <= 0) && (difficultyPoints <= 0))
             {
                 duringWave = false;
                 timer = intermission;
                 currentWave++;
             }
 
-            if(spawnCDRemaining <= 0)
+            if((spawnCDRemaining <= 0) && (difficultyPoints > 0))
             {
                 /*to do: spawn papers in random spots and not just at the spawner. 
                  * Also there will eventually be dice rolls determining what kinds of paper get spawned, 
                  * with chances depending on wave number, but right now there's only 1 kind of paper. */
                 spawnCDRemaining = spawnCD;
-                Instantiate(paperworkTypes[0], transform.position, transform.rotation);
+                ((GameObject)Instantiate(paperworkTypes[0], transform.position, transform.rotation)).GetComponent<Paperwork>().Set(gameObject, goal, player);
                 difficultyPoints -= paperworkTypes[0].GetComponent<Paperwork>().difficultyPoints;
+                //Debug.Log(GameObject.FindObjectsOfType<Paperwork>().Length + " " + difficultyPoints);
             }
         }
         else

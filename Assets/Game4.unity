@@ -946,13 +946,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1397125825}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6400}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1600}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &1397125827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -966,6 +966,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intermission: 4
   spawnCD: 1
+  player: {fileID: 687378333}
+  goal: {fileID: 1650926357}
   paperworkTypes:
   - {fileID: 1676262515546140, guid: cd06fbb274881384b8d254b3138604b8, type: 2}
 --- !u!1 &1420632953
@@ -1127,7 +1129,7 @@ GameObject:
   - component: {fileID: 1650926359}
   - component: {fileID: 1650926358}
   m_Layer: 0
-  m_Name: BackWall
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1194,8 +1196,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1650926357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 250, z: -2}
-  m_LocalScale: {x: 800, y: 800, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6

@@ -8,9 +8,9 @@ public class Paperwork : MonoBehaviour {
     public float speed;
     public float baseHealth;
     float health;
-    public GameObject spawner;
-    public GameObject goalGO;
-    public GameObject player;
+    GameObject spawner;
+    GameObject goalGO;
+    GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -34,5 +34,12 @@ public class Paperwork : MonoBehaviour {
 
         transform.Translate(dir.normalized * distThisFrame, Space.World);
                     //this.transform.rotation = Quaternion.LookRotation(dir);
+    }
+
+    public void Set(GameObject inSpawner, GameObject inGoal, GameObject inPlayer)
+    {
+        spawner = inSpawner;
+        goalGO = inGoal;
+        player = inPlayer;
     }
 }

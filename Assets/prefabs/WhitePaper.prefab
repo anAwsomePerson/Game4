@@ -109,8 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyPoints: 1
-  speed: 1
+  speed: 128
   baseHealth: 1
-  spawner: {fileID: 0}
-  goalGO: {fileID: 0}
-  player: {fileID: 0}
