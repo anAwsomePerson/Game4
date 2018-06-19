@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour {
     float timer;
     float spawnCDRemaining;
     int currentWave;
-    int difficultyPoints;
+    float difficultyPoints;
     public GameObject player;
     public GameObject goal;
     public GameObject[] paperworkTypes = new GameObject[1];

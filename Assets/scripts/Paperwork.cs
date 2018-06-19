@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Paperwork : MonoBehaviour {
     //to do: figure out why I can't figure out how to assign game objects to the game object variables 
-    public int difficultyPoints;
+    public float difficultyPoints;
     public float speed;
     public float baseHealth;
     float health;

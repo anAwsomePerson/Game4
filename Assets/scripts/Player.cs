@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
     public int money;
-    public int lives;
+    public float lives;
     public int leftHand;
     public int rightHand;
     public Text waveText;
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour {
         waveText.text = "Wave " + spawner.GetComponent<Spawner>().CurrentWave() + " of infinity";
     }
 
-    public void LoseLives(int loss)
+    public void LoseLives(float loss)
     {
         lives -= loss;
 
