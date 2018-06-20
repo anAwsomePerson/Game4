@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
     public string[] weaponNames = new string[2];
     public static bool playing;
     public GameObject spawner;
+    Rigidbody rigidbody;
     //to do: add controls that let the player aim, move sideways, and use weapons 
 
     // Use this for initialization
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour {
         leftHandText.text = weaponNames[leftHand];
         rightHandText.text = weaponNames[rightHand];
         centerText.text = "";
+        rigidbody = GetComponent<Rigidbody>();
     }
 	
 	// Update is called once per frame
@@ -32,6 +34,13 @@ public class Player : MonoBehaviour {
         moneyText.text = "Money: " + money.ToString();
         livesText.text = "Lives: " + lives.ToString();
         waveText.text = "Wave " + spawner.GetComponent<Spawner>().CurrentWave() + " of infinity";
+    }
+
+    void FixedUpdate()
+    {
+        /*float horizontal = Input.GetAxis("Horizontal");
+        //Debug.Log(horizontal);*/
+        rigidbody.AddForce(new Vector3(1024 * Input.GetAxis("Horizontal"), 0f, 0f));
     }
 
     public void LoseLives(float loss)
